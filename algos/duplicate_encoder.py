@@ -1,29 +1,23 @@
 """
-Цель этого упражнения — преобразовать строку в новую строку, где каждый символ в новой строке — это «(»,
-если этот символ встречается в исходной строке только один раз, или «)», если этот символ встречается в
-исходной строке более одного раза. Нужно игнорировать заглавные буквы при определении, является ли символ дубликатом.
+Goal — transform a string into a new string, where each symbol in a anew string is «(», if that symbol has no duplicates, and «)», 
+if that symbol has duplicates. Need to ignore capital letters.
 
-Требуемый результат
+Examples:
 "din"      =>  "((("
 "recede"   =>  "()()()"
 "Success"  =>  ")())())"
 "(( @"     =>  "))(("
 
 """
-############################## SOLUTION 1 ########################################
-# def duplicates(string):
-#     string = string.lower()
-#     new_word = ""
-#     for i in string:
-#         if string.count(i) > 1:
-#             new_word += ")"
-#         else:
-#             new_word += "("
-#     print(new_word)
 
-############################## SOLUTION 2 #############################################
-# def duplicates(string):
-#     return "".join(["(" if string.lower().count(c) == 1 else ")" for c in string.lower()])
-#
-#
-# print(duplicates("Success"))
+def duplicates(string):
+    string = string.lower()
+    new_word = ""
+    for i in string:
+        if string.count(i) > 1:
+            new_word += ")"
+        else:
+            new_word += "("
+    print(new_word)
+
+
